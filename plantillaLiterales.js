@@ -7,3 +7,7 @@ var var6 = -3;
 console.log(`Hola soy una plantilla literal que contiene valores de variables como var1, var2, y var3,
  su valores son: ${var1}, ${var2}, y ${var3} , además
   de eso tambien se puede sumar var4, var5, var6, el resultado de la suma seria: ${var4 + var5 + var6}.`)
+
+var variableFlecha = () => console.log(var4 + var5);
+console.log(`esto es una prueba para ver si se pueden presentar sentencias: ${variableFlecha()}.`);
+// ahí porblemas con la sentencia de la funcion
