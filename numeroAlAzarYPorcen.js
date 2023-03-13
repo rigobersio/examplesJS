@@ -9,3 +9,11 @@ var porcentajeALAzar = Math.floor(Math.random() * 101);
 
 //example
 console.log(rangoEnteroAlAzar(0, 3));
+console.log(rangoEnteroAlAzar(0, 3));console.log(rangoEnteroAlAzar(0, 3));
+
+
+
+
+
+
+
