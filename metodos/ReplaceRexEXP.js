@@ -26,7 +26,7 @@ function delateTilde(string){
     respuesta = respuesta.replace(/[\ú]/g, 'u');
     respuesta = respuesta.replace(/[\ñ]/g, 'n');
    // respuesta = string; // ESTO FUE UN GRAN ERROR DE MI PARTE PORQUE EL VALOR DE LA DERECHA SE ASIGNA EN LA IZQUIERDA POR LO TANTO string
-   // que es es la frase original con tildes es asignada a respuesta que es la trabajada y por tanto se pierde todo el trabajo
+   // que es la frase original con tildes es asignada a respuesta que es la trabajada y por tanto se pierde todo el trabajo
     return respuesta;
 }
 
