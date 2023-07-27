@@ -4,7 +4,7 @@
 
 var arr = ['ERROR', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
 
-funtion(num){
+function diaSemana(num){
 	switch (num) {
 		case 1:
 			return arr[num];
@@ -34,13 +34,81 @@ funtion(num){
 }
 
 
-/*
 
-	Crea un programa que solicite un mes del año (número del 1 al 12) y muestre el nombre del mes correspondiente.
+// Crea un programa que solicite un mes del año (número del 1 al 12) y muestre el 
+// nombre del mes correspondiente.
 
-	Haz un programa que tome un carácter (letra) como entrada y determine si es una vocal o una consonante.
+var arr = ['ERROR', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Dieciembre'];
+var soyMes = function(num){
+	switch (num) {
+		case 1:
+			return arr[num];
+			break;
+		case 2:
+			return arr[num];
+			break;
+		case 3:
+			return arr[num];
+			break;
+		case 4:
+			return arr[num];
+			break;
+		case 5:
+			return arr[num];
+			break;
+		case 6:
+			return arr[num];
+			break;
+		case 7:
+			return arr[num];
+			break;
+		case 8:
+			return arr[num];
+			break;
+		case 9:
+			return arr[num];
+			break;
+		case 10:
+			return arr[num];
+			break;
+		case 11:
+			return arr[num];
+			break;
+		case 12:
+			return arr[num];
+			break;
+		default:
+			return arr[0];
+			break;
+	}
+}
 
-	Escribe un programa que tome una letra del alfabeto y muestre si es una letra mayúscula o minúscula.
+
+// 3) Haz un programa que tome un carácter (letra) como entrada y determine si es una vocal
+// o una consonante.
+
+function vocalOConsonante(letra) {
+	var str = 'aeiouAEIOU';
+	var str2 = 'qwrtypsdfghjklñzxcvbnmQWRTYPSDFGHJKLÑZXCVBNM';
+	var valor1 = str.includes(letra)
+	var valor2 = str2.includes(letra);
+	switch(valor1, valor2){
+		case true, false:
+			return letra + ' es vocal';
+			break;
+		case false, true:
+			return letra + ' es consonante';
+			break;
+		default:
+			return 'ERROR';
+			break;
+	}
+}
+	
+
+
+
+/*Escribe un programa que tome una letra del alfabeto y muestre si es una letra mayúscula o minúscula.
 
 	Crea un programa que solicite un número del 1 al 12 y muestre la cantidad de días que tiene el mes correspondiente (ignora años bisiestos).
 
