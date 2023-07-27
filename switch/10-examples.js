@@ -11,7 +11,7 @@ funtion(num){
 	break;
 	case 2
 		return arr[num];
-	break;
+		break;
 	case 3
 		return arr[num];
 	break;
