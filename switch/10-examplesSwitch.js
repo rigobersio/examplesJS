@@ -9,25 +9,25 @@ funtion(num){
 	case 1:
 		return arr[num];
 	break;
-	case 2
+	case 2:
 		return arr[num];
 		break;
-	case 3
+	case 3:
 		return arr[num];
 	break;
-	case 4
+	case 4:
 		return arr[num];
 	break;
-	case 5
+	case 5:
 		return arr[num];
 	break;
-	case 6
+	case 6:
 		return arr[num];
 	break;
-	case 7
+	case 7:
 		return arr[num];
 	break;
-	default
+	default:
 		return arr[0];
 	break;
 }
