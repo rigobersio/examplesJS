@@ -118,7 +118,7 @@ function sumatoriaDelArreglo(arreglo) {
     var resultado = 0;
     for (var i = 0; i < arreglo.length; i++) {
         resultado += arreglo[i];
-    } return resultado
+    } return resultado;
 }
 
 // 10) Problema de conteo de vocales: Crea un programa que tome una cadena como entrada y cuente la cantidad de vocales que contiene.
@@ -249,6 +249,7 @@ function contadorDigitos(num) {
     var resultado = 0;
     while (i < numArr.length) {
         if (numArr[i] === '-' || numArr[i] === '.') {
+            i++;
             continue;
         } else if (numArr[i] == 'fin') {
             return resultado;
@@ -263,15 +264,16 @@ function contadorDigitos(num) {
 
 function esPrimo(num) {
     if (num < 2) {
-        return 'No es primo';
-    } else if (num > 1) {
-        for (var i = 2; i <= num; i++) {
-            if (num % i === 0 && i !== num) {
+        return 'No es Primo';
+    }
+    else if (num > 1) {
+        var i = 2;
+        while (i < num) {
+            if (num % i === 0) {
                 return 'No es Primo';
-            } else if (i === num) {
-                return 'Es Primo';
             }
-        }
+            i++
+        } return 'Es primo';
     } else {
         return 'ERROR';
     }
@@ -280,17 +282,19 @@ function esPrimo(num) {
 // 5) Problema de serie Fibonacci: Escribe un programa que muestre los primeros n números de la serie Fibonacci utilizando un bucle while.
 
 function fibonacci(Nnum) {
-    arrFibonacci = [1, 1];
-    if (Nnum <= 0) {
-        return 'ERROR';
-    } else if (Nnum === 1) {
-        return [1];
-    } else if (Nnum === 2) {
-        return [1, 1];
-    } else if (Nnum > 2) {
-        for (var i = 0; arrFibonacci.length < Nnum; i++) {
-            arrFibonacci.push(arrFibonacci[i] + arrFibonacci[i + 1])
-        } return arrFibonacci;
+    var arrFibonacci = [1, 1];
+    var i = 2;
+    if (Nnum > 0) {
+        if (Nnum === 1) {
+            return [1];
+        } else if (Nnum === 2) {
+            return arrFibonacci;
+        } else if (Nnum > 1) {
+            while (i < Nnum) {
+                arrFibonacci.push(arrFibonacci[i - 2] + arrFibonacci[i - 1]);
+                i++;
+            } return arrFibonacci;
+        }
     } else {
         return 'ERROR';
     }
@@ -301,12 +305,23 @@ function fibonacci(Nnum) {
 //como un triángulo de asteriscos o un cuadrado hueco.
 
 function trianguloRec(filas) {
-    for (var i = 1; i <= filas; i++) {
-        var triangulo = '';
-        for (var f = 1; f <= i; f++) {
-            triangulo += '.';
-        }
-        console.log(triangulo);
+    var i = 1;
+    var caracter = '';
+    if (filas < 1) {
+        return 'ERROR';
+    } else if (filas > 1) {
+        while (i <= filas) {
+            var f = 1;
+            var caracter = '';
+
+            while (f <= i) {
+                caracter += '*';
+                f++;
+            } console.log(caracter);
+            i++;
+        } return console.log('***fin***');
+    } else {
+        return 'ERROR';
     }
 }
 
@@ -316,53 +331,65 @@ function trianguloRec(filas) {
 // 7) Problema de búsqueda en un arreglo: Desarrolla un programa que busque un elemento específico en un arreglo y muestre su posición.
 
 function buscarArr(arreglo, elemento) {
-    var soyElArreglo = arreglo;
-    for (var i = 0; i <= soyElArreglo.length; i++) {
-        if (soyElArreglo[i] === elemento) {
-            return i;
-        }
-    } return 'el elemento buscado no existe';
+    var i = 0;
+    arreglo.push('fin');
+    while (arreglo[i] !== 'fin') {
+        if (arreglo[i] === elemento) {
+            return `${elemento} está presente en el ***arreglo*** en la posicion ${i}.`;
+        } i++;
+    } return `${elemento}, no está presente en el ***arreglo***.`
 }
 
 
 
 // 8) Problema de suma de elementos en un arreglo: Escribe un programa que tome un arreglo de números como entrada
-// y calcule la suma de sus elementos utilizando un bucle for.
+// y calcule la suma de sus elementos utilizando un bucle while.
 
 
 function sumatoriaDelArreglo(arreglo) {
+    var i = 0;
     var resultado = 0;
-    for (var i = 0; i < arreglo.length; i++) {
-        resultado += arreglo[i];
-    } return resultado
+    while (i < arreglo.length) {
+        resultado += arreglo[i]
+        i++;
+    }
+    return resultado;
 }
 
 // 10) Problema de conteo de vocales: Crea un programa que tome una cadena como entrada y cuente la cantidad de vocales que contiene.
 
 
 function conteoVacales(str) {
-    var resultado = 0;
-    var arrVocales = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    var i = 0;
+    var contador = 0;
     var arrStr = str.split('');
-    for (var i = 0; i < arrStr.length; i++) {
+    arrStr.push('fin');
+    var arrVocales = 'aeiouáéíóúAEIOUÁÉÍÓÚ'.split('');
+    arrVocales.push('fin');
 
-        for (var f = 0; f < arrVocales.length; f++) {
-            if (arrStr[i] === arrVocales[f]) {
-                resultado += 1;
-            }
-        }
-    } return resultado;
+    while (arrStr[i] !== 'fin') {
+        var f = 0;
+        while (arrVocales[f] !== 'fin') {
+            if (arrStr[i] == arrVocales[f]) {
+                contador += 1;
+            } f++;
+        } i++;
+    } return `El número de vocales es ${contador}.`;
 }
 
 
 // 11) Problema de conversión de unidades: Haz un programa que tome un arreglo de temperaturas en grados Celsius 
-//y lo convierta a grados Fahrenheit utilizando un bucle for. C=(F-32)/1,8
+//y lo convierta a grados Fahrenheit utilizando un bucle while. C=(F-32)/1,8
 
 function celsiusToFahrenheit(arrC) {
-    var arrFahrenheit = [];
-    for (var i = 0; i < arrC.length; i++) {
-        arrFahrenheit[i] = (arrC[i] * 1.8) + 32;
-    } return arrFahrenheit;
+    var i = 0;
+    arrC.push('fin');
+    var arrF = [];
+    while (arrC[i] !== 'fin') {
+        arrF[i] = (1.8 * arrC[i]) + 32;
+        i++;
+    }
+    return arrF;
 }
 
 
@@ -371,42 +398,23 @@ function celsiusToFahrenheit(arrC) {
 //y calcule el resultado de elevar el primer número a la potencia del segundo número utilizando un bucle while.
 
 function potencia(base, exponente) {
+    var i = 1;
     var resultado = 1;
-    for (var i = 1; i <= exponente; i++) {
+    while (i <= exponente) {
         resultado *= base;
-    } return resultado;
+        i++;
+    }
+    return resultado;
 }
 
 // 13) Problema de generación de números aleatorios: Escribe un programa que genere un arreglo de n números aleatorios
-// entre un rango especificado utilizando un bucle for.
+// entre un rango especificado utilizando un bucle while.
 
 function arregloAleatoreo(cantidadNum, inicio, final) {
+    var i = 0;
     var arr = [];
-    for (var i = 0; i < cantidadNum; i++) {
-        while (arr.length <= i) {
-            var numeroAleatorio = Math.floor(Math.random() * (final + 1));
-            if (numeroAleatorio >= inicio) {
-                arr[i] = numeroAleatorio;
-            }
-        }
+    while (i < cantidadNum) {
+        arr[i] = Math.floor(Math.random() * (final - inicio + 1) + inicio);
+        i++;
     } return arr;
 }
-
-/*
-En tu solución, estás generando un número aleatorio entre 0 y final, pero luego estás asegurándote 
-de que ese número sea mayor o igual que inicio. Sin embargo, esto puede resultar en una ** distribución no uniforme **
-  de los números aleatorios dentro del rango especificado. Es decir, algunos
-  números dentro del rango pueden tener una mayor probabilidad de ser generados que otros.
-*/
-
-
-function arregloAleatorio(cantidadNum, inicio, final) {
-    var arr = [];
-    for (var i = 0; i < cantidadNum; i++) {
-        var numeroAleatorio = Math.floor(Math.random() * (final - inicio + 1)) + inicio; // final + 1 - inicio; + 1 necesario x random
-        arr.push(numeroAleatorio);
-    }
-    return arr;
-}
-
-
