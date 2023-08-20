@@ -37,7 +37,8 @@ function listaObjetos(obj, nombre, precio, cantidadDisponible) {
 }
 
 
-// 5) Costo total de la lista: Utiliza el método reduce para calcular el total de la lista de productos comprados.
+// 5) Costo total de la lista: Utiliza el método reduce para calcular el total de la lista
+// de productos comprados.
 
 function listaObjetos(obj, nombre, precio, cantidadDisponible) {
     var obj = {
@@ -48,24 +49,45 @@ function listaObjetos(obj, nombre, precio, cantidadDisponible) {
     return obj;
 }
 
-var arrObjetos = [listaObjetos('obj1' , 'pan', 2500, undefined), listaObjetos('obj2' , 'pate', 3500, undefined), listaObjetos('obj3' , 'platano', 1000, undefined)];
+var arrObjetos = [listaObjetos('obj1', 'pan', 2500, undefined), listaObjetos('obj2', 'pate', 3500, undefined), listaObjetos('obj3', 'platano', 1000, undefined)];
 
-var costoTotal = arrObjetos.reduce(function (acumulador, objeto) {return acumulador + objeto.precio;}, 0);
+var costoTotal = arrObjetos.reduce(function (acumulador, objeto) { return acumulador + objeto.precio; }, 0);
 
 
 
-//6) Problema: "Descuento total de la lista" Dado un array de productos con propiedades nombre, 
-//precio y descuento, utiliza el método reduce para calcular el descuento total aplicado a todos los productos.
+//6) Problema: "Descuento total de la lista" Dado un array de productos con propiedades 
+//nombre, precio y descuento, utiliza el método reduce para calcular el descuento
+// total aplicado a todos los productos.
 
-function listaObjetos(obj, nombre, precio, cantidadDisponible) {
+function listaObjetos(obj, nombre, precio, descuento) {
     var obj = {
         nombre,
         precio,
-        cantidadDisponible,
+        descuento,
     }
     return obj;
 }
 
+var arrObjetosConDescuento = [
+    listaObjetos('PastaZapato', 'pastaPepe', 550, 50),
+    listaObjetos('pañuelo', 'pañuelosSuper', 230, 10),
+    listaObjetos('huevosduros', 'docenaHuevos', 3000, 5),
+    listaObjetos('detergente', 'detergenteExtra', 5899, 10)
+];
+
+function totaldescuento(arregloProductos) {
+    var total = arregloProductos.reduce(function (acumulador, objeto) {
+        return acumulador + objeto.precio;
+    }, 0);
+
+    var totalConDescuento = arregloProductos.reduce(function (acumulador, objeto) {
+        return acumulador + objeto.precio * (objeto.descuento / 100);
+    }, 0);
+
+    return total - totalConDescuento;
+}
+
+totaldescuento(arrObjetosConDescuento);
 
 
 
