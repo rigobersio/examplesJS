@@ -107,6 +107,15 @@ function numProp(objeto) {
     }, 0);
 };
 
+numProp(obj);
+
+// alternativa
+
+var numeroPropiedades = Object.keys(obj).length; // asumuendo que no hay propiedades undefined
+
+numeroPropiedades;
+
+
 
 /*
 
