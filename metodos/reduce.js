@@ -117,8 +117,8 @@ function ordenarArr(arrDesordenado) {
 
 console.log(ordenarArr(arr));
 
-// 15) Contar Caracteres en Cadenas: Cuenta cuántas veces aparece un carácter específico en un array de cadenas utilizando reduce().
+// 12) Contar Caracteres en Cadenas: Cuenta cuántas veces aparece un carácter específico en un array de cadenas utilizando reduce().
 
-// 16) Conteo de Elementos: Crea una función que cuente la cantidad de cada elemento en un array utilizando reduce().
+// 13) Conteo de Elementos: Crea una función que cuente la cantidad de cada elemento en un array utilizando reduce().
 
-// 17) Extracción de Valores: Utiliza reduce() para extraer todos los valores únicos de un array de objetos.
+// 14) Extracción de Valores: Utiliza reduce() para extraer todos los valores únicos de un array de objetos.
