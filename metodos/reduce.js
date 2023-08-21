@@ -52,14 +52,14 @@ function factorial(num) {
 }
 
 
-// 9) Encontrar el Mayor Número: Encuentra el número más grande en un array utilizando reduce().
+// 7) Encontrar el Mayor Número: Encuentra el número más grande en un array utilizando reduce().
 
 var arr = [1, 2, 4, 77, 1.4568326];
 
 var mayorArr = arr.reduce(function (soyMayor, numero) { if (numero > soyMayor) { soyMayor = numero; return soyMayor; } else { return soyMayor; } }, arr[0]);
 
 
-// 10) Eliminar Duplicados: Escribe una función que elimine los elementos duplicados en un array utilizando reduce().
+// 8) Eliminar Duplicados: Escribe una función que elimine los elementos duplicados en un array utilizando reduce().
 
 var arrNumeros = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 21, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 11,];
 
@@ -78,22 +78,44 @@ function arrFilter(arr) {
 
 console.log(arrFilter(arrNumeros));
 
-// 11) Contar Caracteres: Cuenta cuántas veces aparece un carácter específico en una cadena usando reduce().
+// 9) Contar Caracteres: Cuenta cuántas veces aparece un carácter específico en una cadena usando reduce().
 
 var arrSopaipillas = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 21, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 'sopaipilla', 'sopaipilla'];
 
 function contarElementos(busqueda, arr) {
-   return arr.reduce(function (numeroDeElementos, elemento) { if (elemento === busqueda) { return numeroDeElementos + 1 } else { return numeroDeElementos; } }, o);
+   return arr.reduce(function (numeroDeElementos, elemento) { if (elemento === busqueda) { return numeroDeElementos + 1 } else { return numeroDeElementos; } }, 0);
 };
 
 console.log(contarElementos('sopaipilla', arrSopaipillas));
 
-// 12) Acumulador de Objetos: Toma un array de objetos con valores numéricos y usa
-// reduce() para obtener un objeto que contenga la suma de cada propiedad.
+// 10) Acumulador de Objetos: Toma un array de objetos con propiedades iguales y valores numéricos. Usa
+// reduce() para obtener un objeto nuevo (similar) que contenga en cada propiedad la suma de sus valores individuales.
 
-// 13) Multiplicación de Números: Utiliza reduce() para multiplicar todos los números en un array.
+var arrObj = [{a : 1, b : 2, c : 3,}, {a : 1, b : 2, c : 3,}, {a : 1, b : 2, c : 3,}];
 
-// 14) Ordenar Números: Ordena un array de números de menor a mayor utilizando reduce().
+function sumaValoresPropiedades(arr) {
+   var nuevoObj = {
+      a : arr.reduce(function (acumulador, valorPropiedad) {return acumulador + valorPropiedad.a}, 0),
+      
+      b : arr.reduce(function (acumulador, valorPropiedad) {return acumulador + valorPropiedad.b}, 0),
+
+      c : arr.reduce(function (acumulador, valorPropiedad) {return acumulador + valorPropiedad.c}, 0),
+   };
+   return nuevoObj;
+}
+
+console.log(sumaValoresPropiedades(arrObj));
+
+
+// 11) Ordenar Números: Ordena un array de números de menor a mayor utilizando reduce().
+
+var arr = [1,2,2,1,6,-500,8];
+
+function ordenarArr(arrDesordenado) {
+   
+};
+
+console.log(ordenarArr(arr));
 
 // 15) Contar Caracteres en Cadenas: Cuenta cuántas veces aparece un carácter específico en un array de cadenas utilizando reduce().
 
