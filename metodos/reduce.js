@@ -117,8 +117,60 @@ function ordenarArr(arrDesordenado) {
 
 console.log(ordenarArr(arr));
 
-// 12) Contar Caracteres en Cadenas: Cuenta cuántas veces aparece un carácter específico en un array de cadenas utilizando reduce().
+// 12) Contar Caracteres en Cadenas: Cuenta cuántas veces aparece un carácter específico 
+// en un array de cadenas utilizando reduce().
 
-// 13) Conteo de Elementos: Crea una función que cuente la cantidad de cada elemento en un array utilizando reduce().
+var arr = [1, 2, 3, 1, 2, 3];
 
-// 14) Extracción de Valores: Utiliza reduce() para extraer todos los valores únicos de un array de objetos.
+function contadorCaracteres (caracter, arreglo) {
+   return arreglo.reduce(function (acumulador, elemento) {
+      if(caracter === elemento) {
+      return acumulador += 1;
+      } else {
+         return acumulador;
+      }
+   }, 0);
+}
+
+// 13) Conteo de Elementos: Crea una función que cuente la cantidad de cada elemento en un 
+//array utilizando reduce().
+
+var arr = [1, 2, 3, 1, 2, 3];
+
+function conteoElementos(arreglo) {
+   return arr.reduce(function (contador, elemento){
+      if (contador[elemento] === undefined) {
+         contador[elemento] = 1;
+      } else {
+         contador[elemento]++;
+      } return contador;
+   }, {});
+}
+
+
+//14) Extracción de Valores: Utiliza reduce() para extraer todos los 
+//valores únicos de un array de objetos.
+
+var arr = [1, 2, 3, 1, 2, 3, 77];
+
+function extractorUnicos (arreglo) {
+   var object = arreglo.reduce(function (acumulador, elemento) {
+      if (acumulador[elemento] === undefined) {
+         acumulador[elemento] = 1;
+      } else {
+         acumulador[elemento]++
+      } return acumulador;
+   }, {});
+
+   var arrPropiedades = Object.keys(object);
+   var arrExtraidos = [];
+   var i = 0;
+   while(i < arrPropiedades.length) {
+      if (object[arrPropiedades[i]] === 1) {
+         arrExtraidos.push(Number.arrPropiedades[i]); // alternativa (arrPropiedades[i] + 1 - 1); + 0 no funciona
+         i++;
+      } else {
+         i++;
+      }
+   } return arrExtraidos;
+}
