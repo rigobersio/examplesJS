@@ -12,4 +12,3 @@ console.log(clonaArr);
 
 // sirve perfectamente para clonar array
 
-let arr = [, -66, 23, 0, 104]
