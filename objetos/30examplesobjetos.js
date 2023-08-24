@@ -117,11 +117,26 @@ numeroPropiedades;
 
 
 
+//8) Contador de caracteres: Crea un objeto cadena con una propiedad texto. 
+//Agrega un método que cuente la cantidad de caracteres en la cadena.
+
+var objCadena = {
+    texto: 'SoyUnaCadenaDeTexto',
+    contadorCaracteres: function () { return this.texto.length; },
+}
+
+objCadena.contadorCaracteres();
+
+var objCadena = {
+    texto: 'Soy Una Cadena De Texto',
+    contadorCaracteres: function () { return this.texto.replace(/\s+/g, '').length; },
+}
+
+objCadena.contadorCaracteres();
+
+
+
 /*
-
-
-Contador de caracteres: Crea un objeto cadena con una propiedad texto. Agrega un método que cuente la cantidad de caracteres en la cadena.
-
 Lista de tareas: Crea un objeto listaTareas con métodos para agregar, eliminar y marcar tareas como completadas.
 
 Ordenar objeto por propiedad: Crea una función que tome una lista de objetos y ordene los objetos por una propiedad específica.

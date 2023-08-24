@@ -1,17 +1,18 @@
-// se solicitara una frase que puede contener tildes aguadas, ñ, espacios, signos de puntuación, exclamación o interrogación y otro tipo de caracteres, para dejar como resultado un string que contenga solo caracteres alfanumericos (la ñ se cambiara por n.
-// se ocupara el método replace( y la texnica RexExp /[\W]/g or /[A-Za-z1-9]/g)
+// se solicitara una frase que puede contener tildes, ñ, espacios, signos de puntuación, exclamación o interrogación y otro tipo de caracteres, para dejar como resultado un string que contenga solo caracteres alfanumericos (la ñ se cambiara por n.
+// se ocupara el método replace( y la tecnica RexExp /[\W]/g or /[A-Za-z1-9]/g)
 
 let texto = 'Los niños';
 let texto2 = texto.replace(/[Wñ]/g, '');
 console.log(texto2);
 
-// esta situación es un tanto particular debido a que al aplicar la tecnica RexExp se eliminara la vocal que tiene una silva, por lo cual, previo a la eliminacíon del caracter
+// esta situación es un tanto particular debido a que al aplicar la tecnica RexExp se eliminara 
+//vocales  con tilde, por lo cual, previo a la eliminacíon del caracter
 // por lo anterior es necesario hacer varios pasos previos si por ejemplo se quiere evaluar un palindromo
 
 /*
 1. solicitar un texto y advertir que este texto tiene que tener algunas condiciones particulares: 'La frase a evaluar solo admite tildes para los acentos agudos "´", es decir, el programa removerá del análisis una vocal con tilde grave (ejemplo:  à), y esta no formará parte del análisis'. 
 
-2. pasar todos los caracteres a mayusculas o a minusculas.
+2. pasar todos los caracteres en mayusculaa o a minusculas.
 
 3. reemplazar vocales con tilde por vocales sin tilde y la ñ por n. Para esto ocupar la siguiente función
 
