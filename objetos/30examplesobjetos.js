@@ -136,12 +136,76 @@ objCadena.contadorCaracteres();
 
 
 
-/*
-Lista de tareas: Crea un objeto listaTareas con métodos para agregar, eliminar y marcar tareas como completadas.
+//9)Lista de tareas: Crea un objeto listaTareas con métodos para agregar, eliminar y marcar tareas como completadas.
 
-Ordenar objeto por propiedad: Crea una función que tome una lista de objetos y ordene los objetos por una propiedad específica.
+var objectTareas = {
+    salirAlMundo: {
+        protocolo: 'Protocolo salir al mundo',
+        estado: 'listo',
+    },
+    almorzar: {
+        protocolo: 'programar los jíbiris',
+        estado: 'incompleto',
+    },
+    agregarTarea: (tarea, info) => this.objectTareas[tarea] = { protocolo: info, estado: null, },
+    eliminarTarea: (propiedad) => delete this.objectTareas[propiedad],
+    estadoPropiedad: (propiedad, elEstado) => this.objectTareas[propiedad].estado = elEstado,
+}
 
-Calculadora: Crea un objeto calculadora con métodos para sumar, restar, multiplicar y dividir.
+
+
+//10) Ordenar objeto por propiedad: Crea una función que tome una lista de objetos y ordene los objetos por una propiedad específica.
+
+var obj1 = {
+    prop1: null,
+    prop2: null,
+    prop3: null,
+}
+
+var obj2 = {
+    prop1: null,
+    prop2: null,
+    prop3: null,
+}
+var obj3 = {
+    prop1: null,
+    prop2: null,
+    prop3: null,
+    prop4: 10,
+}
+
+var obj4 = {
+    prop1: null,
+    prop2: null,
+    prop3: null,
+    prop4: 5,
+}
+
+var arrObj = [obj1, obj2, obj3, obj4];
+
+function ordenObj(arr) {
+    var nuevoArr = [];
+    var i = 0;
+    while (i < arr.length) {
+        for(prop4 in arr[i]) {
+            nuevoArr.push(arr.reduce(function (acumulador, index) {
+                if (acumulador < index.prop4) {
+                    acumulador = index.prop4;
+                } return acumulador;
+            }, -1 * 10 ** 10));
+
+            arr.splice(i, 1);
+        }
+        ++i
+    } var f = 0;
+    while (f < arr.length) {
+        nuevoArr.push(arr[f]);
+        arr.splice(f, 1)
+        f++;
+    } return nuevoArr;
+}
+
+/*Calculadora: Crea un objeto calculadora con métodos para sumar, restar, multiplicar y dividir.
 
 Herencia de objetos: Crea un objeto animal con propiedades y métodos generales. Luego, crea un objeto perro que herede de animal y tenga propiedades y métodos específicos de un perro.
 
