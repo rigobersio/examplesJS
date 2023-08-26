@@ -111,25 +111,24 @@ console.log(sumaValoresPropiedades(arrObj));
 
 // 11) Ordenar Números: Ordena un array de números de menor a mayor utilizando reduce().
 
-var arr = [1,2,2,1,6,-500,8];
+var arregloNumerico = [2,1,2,1,6,-500,8];
 
-var OrdenadorReduce = arr.reduce(function(arrOrdenado, número) {
-   
-}, [])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function ordenarNumeros (arr) {
+   return arr.reduce(function(arrOrdenado, index) {
+      var insertado = false;
+      var i = 0;
+      
+      while (i < arr.length) {
+         if (arrOrdenado[i] > index) {
+            arrOrdenado.splice(i, 0, index);
+            insertado = true;
+            break;
+         }
+      } if (!insertado) {
+         arrOrdenado[i] = index;
+      } return arrOrdenado;
+   }, []);
+}
 
 
 
