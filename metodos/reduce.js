@@ -83,7 +83,9 @@ console.log(arrFilter(arrNumeros));
 var arrSopaipillas = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 21, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 'sopaipilla', 'sopaipilla'];
 
 function contarElementos(busqueda, arr) {
-   return arr.reduce(function (numeroDeElementos, elemento) { if (elemento === busqueda) { return numeroDeElementos + 1 } else { return numeroDeElementos; } }, 0);
+   return arr.reduce(function (numeroDeElementos, elemento) {
+      if (elemento === busqueda) { return numeroDeElementos + 1 } else { return numeroDeElementos; }
+   }, 0);
 };
 
 console.log(contarElementos('sopaipilla', arrSopaipillas));
@@ -111,11 +113,45 @@ console.log(sumaValoresPropiedades(arrObj));
 
 var arr = [1,2,2,1,6,-500,8];
 
-function ordenarArr(arrDesordenado) {
+var OrdenadorReduce = arr.reduce(function(arrOrdenado, número) {
    
-};
+}, [])
 
-console.log(ordenarArr(arr));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var numeros = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
+
+var ordenadosReduce = numeros.reduce((ordenados, numero) => {
+  var insertado = false;
+  for (var i = 0; i < ordenados.length; i++) {
+    if (numero < ordenados[i]) {
+      ordenados.splice(i, 0, numero);
+      insertado = true;
+      break;
+    }
+  }
+  if (!insertado) {
+    ordenados.push(numero);
+  }
+  return ordenados;
+}, []);
+
+console.log(ordenadosReduce);  // Output: [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
+
 
 // 12) Contar Caracteres en Cadenas: Cuenta cuántas veces aparece un carácter específico 
 // en un array de cadenas utilizando reduce().

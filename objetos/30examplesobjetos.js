@@ -187,7 +187,7 @@ function ordenObj(arr) {
     var nuevoArr = [];
     var i = 0;
     while (i < arr.length) {
-        for(prop4 in arr[i]) {
+        if(prop4 in arr[i]) {
             nuevoArr.push(arr.reduce(function (acumulador, index) {
                 if (acumulador < index.prop4) {
                     acumulador = index.prop4;
@@ -204,6 +204,9 @@ function ordenObj(arr) {
         f++;
     } return nuevoArr;
 }
+
+// output: [ 10, 10, 10, { prop1: null, prop2: null, prop3: null, prop4: 5 } ]
+// pero debería ser [obj1, obj2, obj3, obj4];
 
 /*Calculadora: Crea un objeto calculadora con métodos para sumar, restar, multiplicar y dividir.
 
