@@ -154,7 +154,8 @@ var objectTareas = {
 
 
 
-//10) Ordenar objeto por propiedad: Crea una función que tome una lista de objetos y ordene los objetos por una propiedad específica.
+//10) Ordenar objeto por propiedad: Crea una función que tome una lista de objetos y ordene los objetos por una 
+//propiedad específica.
 
 var obj1 = {
     prop1: null,
@@ -184,29 +185,16 @@ var obj4 = {
 var arrObj = [obj1, obj2, obj3, obj4];
 
 function ordenObj(arr) {
-    var nuevoArr = [];
     var i = 0;
     while (i < arr.length) {
-        if(prop4 in arr[i]) {
-            nuevoArr.push(arr.reduce(function (acumulador, index) {
-                if (acumulador < index.prop4) {
-                    acumulador = index.prop4;
-                } return acumulador;
-            }, -1 * 10 ** 10));
-
-            arr.splice(i, 1);
-        }
-        ++i
-    } var f = 0;
-    while (f < arr.length) {
-        nuevoArr.push(arr[f]);
-        arr.splice(f, 1)
-        f++;
-    } return nuevoArr;
+        if(!(arr[i].prop4 in arr[i])) {
+        arr[i].prop4 = 0;
+        } i++;
+    }
+    return arr.sort((a, b) => a.prop4 - b.prop4);
 }
 
-// output: [ 10, 10, 10, { prop1: null, prop2: null, prop3: null, prop4: 5 } ]
-// pero debería ser [obj1, obj2, obj3, obj4];
+ordenObj(arrObj);
 
 /*Calculadora: Crea un objeto calculadora con métodos para sumar, restar, multiplicar y dividir.
 
