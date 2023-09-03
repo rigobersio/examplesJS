@@ -54,7 +54,7 @@ var arreglo = [1, 2, 3, 4, 5];
 
 function subArr (arr, elementos) {
 	if (elementos >= arr.length) {
-		return arr;
+		return [arr]; // puede que se necesite que el retorno sea un arreglo que solo contenga arreglos anidados
 	}
 	var arrFinal = [];
 
@@ -72,7 +72,7 @@ function subArr (arr, elementos) {
 			} 
 		} arrFinal.push(miniArr);
 
-	}
+	} return [arr];
 }
 
 subArr(arreglo, 6);
