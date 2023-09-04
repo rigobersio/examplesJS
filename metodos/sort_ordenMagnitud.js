@@ -1,5 +1,5 @@
-//.arr-o-object((a, b) => a - b) menor a mayor 
-//.arr-o-object((a, b) => b - a) mayor a menor
+//arr-o-object.sort((a, b) => a - b) menor a mayor 
+//arr-o-object.sort((a, b) => b - a) mayor a menor
 
 //(a - b) <= 0 or (b - a) <= 0 no hay cambio
 

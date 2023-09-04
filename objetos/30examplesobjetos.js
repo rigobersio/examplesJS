@@ -184,6 +184,11 @@ var obj4 = {
 
 var arrObj = [obj1, obj2, obj3, obj4];
 
+/*
+
+el operador in en este caso produce problemas y al parecer la razón es bien compleja
+
+
 function ordenObj(arr) {
     var i = 0;
     while (i < arr.length) {
@@ -195,6 +200,25 @@ function ordenObj(arr) {
 }
 
 ordenObj(arrObj);
+
+*/
+
+function ordenarObjetos (arrObject) {
+    var i = 0;
+    var arrSinProp4 = [];
+    var arrConProp4 = [];
+    while (i < arrObj.length) {
+        if (arrObject[i].prop4 === undefined || arrObject[i].prop4 === null) {
+            var objetoExtraido = arrObj[i];
+            arrSinProp4.unshift(objetoExtraido);
+        } else {
+            var objetoExtraido = arrObject[i];
+            arrConProp4.unshift(objetoExtraido);
+        }
+        ++i;
+    };
+    return arrSinProp4.concat(arrConProp4.sort((a, b) => a -b))
+}
 
 /*Calculadora: Crea un objeto calculadora con métodos para sumar, restar, multiplicar y dividir.
 
