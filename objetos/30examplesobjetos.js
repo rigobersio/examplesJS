@@ -220,11 +220,31 @@ function ordenarObjetos (arrObject) {
     return arrSinProp4.concat(arrConProp4.sort((a, b) => a -b))
 }
 
-/*Calculadora: Crea un objeto calculadora con métodos para sumar, restar, multiplicar y dividir.
+ordenarObjetos(arrObj);
 
-Herencia de objetos: Crea un objeto animal con propiedades y métodos generales. Luego, crea un objeto perro que herede de animal y tenga propiedades y métodos específicos de un perro.
+//11)Calculadora: Crea un objeto calculadora con métodos para sumar, 
+//restar, multiplicar y dividir.
 
-Validación de formulario: Crea un objeto formulario que valide los campos de un formulario y muestre mensajes de error.
+var calculadora = {
+    sumar: (x, y) => x + y,
+    resta: (x, y) => x - y,
+    multiplicar: (x, y) => x * Y,
+    dividir: (x, y) => x / y,
+}
+
+
+//12) Herencia de objetos: Crea un objeto animal con propiedades y métodos generales. 
+//Luego, crea un objeto perro que herede de animal y tenga 
+//propiedades y métodos específicos de un perro.
+
+
+
+
+
+
+
+
+/*Validación de formulario: Crea un objeto formulario que valide los campos de un formulario y muestre mensajes de error.
 
 Contador de palabras repetidas: Crea una función que tome un texto como argumento y cuente la cantidad de veces que se repite cada palabra.
 
