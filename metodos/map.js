@@ -39,3 +39,32 @@ var arrSinUndefined = function (arrConUndefined) {
         i++;
     } return arrFinal;
 }
+
+arrSinUndefined(arrConUndefined); // output correcto
+
+// de una:
+
+
+var numeros = [1, 2, 3, 4, 5, 6];
+
+function arrCuadradosPares (arr) {
+    var arrConUndefined = numeros.map((num) => {
+        if (num % 2 === 0) {
+        return    num ** 2;
+        } else {
+            return undefined;
+        }
+    });
+
+    var i = 0;
+    var arrFinal = [];
+    while (i < arrConUndefined.length) {
+        if (arrConUndefined[i] !== undefined) {
+            var numero = arrConUndefined[i];
+            arrFinal.unshift(numero);
+        }
+        i++;
+    } return arrFinal
+}
+
+arrCuadradosPares(numeros);
