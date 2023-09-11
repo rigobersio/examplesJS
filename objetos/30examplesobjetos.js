@@ -237,7 +237,7 @@ var calculadora = {
 //Luego, crea un objeto perro que herede de animal y tenga 
 //propiedades y métodos específicos de un perro.
 
-
+class Animal = new
 
 
 
