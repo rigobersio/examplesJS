@@ -50,11 +50,22 @@
 
 ### Class e instanciación pseudo-clásica
 
-* JS no proporciona un verdadero sistema de clases
+* JS no proporciona un verdadero sistema de clases como Java o C++. Pero hay cierta familiaridad.
+* las clases son constructores pero al mismo tiempo son objetos y una clase ***se instancia*** de manera
+pseudo clásica usando la keyword **new**.
+* retomando: un constructor es una función, pero a la vez es un objeto (todo en JS es un objeto); ocupando **new**
+se puede hacer una instancia de esa **función constructora**, la cual por ser **función** puede tomar **argumentos**
 
-Si tienes experiencia en un lenguaje orientado a objetos (como Java o C#), probablemente estés familiarizado con el concepto de clases. Si bien Javascript no proporciona un "verdadero" sistema de clases, hay algo muy familiar. En aras de la discusión, llamaremos a nuestros objetos de clase 'clases'. Se instancia de manera pseudo clásica, usando la palabra clave `new`, y puede tomar argumentos.
+### creación del constructor  ***Gato***
 
-En este ejemplo crearemos una clase `Gato`. La convención para las clases consiste en dar un nombre en mayúscula al nombre de todo lo que se pueda instanciar con la palabra clave `new`. Cuando usamos la palabra clave `new`, Javascript hace un gran trabajo detrás de escena para nosotros y crea y devuelve un objeto automáticamente.
+* Las ***f constructoras*** por convención inician con **mayúscula**.
+* Dicho de otra manera al crear el ***constructor Gato*** se está creando una **clase**.
+* La ***f constructora*** tiene 2 cosas extrañas
+  * ¿qué hace **this**?
+  * No retorna nada
+  * esto tiene que ver con instancear con **new**
+
+* **new** hace un gran trabajo detrás de escena y crea y devuelve un objeto automáticamente.
 
 ```js
 function Gato(nombre) {
@@ -72,6 +83,19 @@ console.log(sam.maullar()); // 'Mi nombre es Sam ... Meow!'
 console.log(kitty.maullar()); // 'Mi nombre es Kitty ... Meow!'
 
 ```
+
+### valores por defecto de la f constructora
+* esto es en el caso de que no se ingrese un argumento para el parametro
+
+```js
+function Gato(nombre, color) {
+    this.nombre = nombre || 'Sin Nombre';
+    this.color = color || 'Sin Color';
+    this.maullar = function() {
+        return 'Mi nombre es ' + this.nombre + ' ... Meow!';
+    }
+```
+
 
 ### ***this*** en las clases
 
@@ -234,7 +258,17 @@ Vamos a solucionar ese problema agregando al prototipo los métodos de Persona, 
 
 ### minutos y asuntos
 
-*
+* 20. new crea un objeto vacío
+* invoca la función constructora con los argumentos utilizados
+* bueno bindea (ocupa el metodo .bind()) con el objeto vacío que creo antes // suena baind
+1. entonces crea objeto {}
+2. suponiendo de la f const. es: function Auto(marca, color, año) {this.marca = marca; this.color = color; this.año = año;}
+  2,1. invoca la f const  Auto('VW', 'azul', 1996).bind(objeto)
+  2,2. bind controla el valor de **this**. el **this** de la **f Auto** será **objeto** (el objeto vacío)
+  2,3 ***recordando***: hay una variable **objeto** {} lo que se estaría diciendo es que objeto.marca = marca
+  2,4 esto funciona con ***bracket notation*** así que al ingresar los argumentos de la nueva instancia hay que ocupar comillas para los ***str***
+3. finalmente retornaría el objeto.
+
 *
 *
 Modulo 7
