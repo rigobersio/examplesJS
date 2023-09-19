@@ -4,8 +4,8 @@
 
 # tareas
 ## local
-* readme
-* vídeo
+* readme <O.K.>
+* vídeo <O.K.>
 * homework
 
 ## web del módulo 7 empata con 06-js-v

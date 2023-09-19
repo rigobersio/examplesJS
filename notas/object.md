@@ -249,6 +249,54 @@ Descartemos esta opción.
 < Uncaught TypeError: toni.saludar is not a 'function'
 // que paso?
 ```
+#### recordar esto:
+
+``` javascript
+> function Persona(nombre,apellido,ciudad) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.ciudad = ciudad;
+  }
+
+> Persona.prototype.saludar = function() {
+    console.log('Soy '+this.nombre+' de '+this.ciudad);
+  }
+
+> var Emi = new Persona('Emi', 'Chequer', 'Buenos Aires');
+
+> Emi.saludar()
+< 'Soy Emi de Buenos Aires'
+```
+
+El ***método-saludar*** no está directamente dentro del constructor **Persona**, está dentro de **Persona.prototype**. La explicación de más abajo es la de Henry (aun no termino de entender ***__proto__***), pero lo que ocurre es que la cadena de herencia de prototipos o ***Prototype-Chain*** por causa del método **call** se hereda la propiedades de un prototipo, en este caso ***Persona*** pero no las de **Persona.prototype** lo que hace que todo los que se cree con **new** y con el constructor **Alumno** no tenga acceso a **Persona.prototype** donde está almacenado el método **saludar**.
+
+Si se invoca el método **saludar()** en un **Objeto** o <instancia> de **Alumno** pero <Prototype-Chain> primero se buscará **saludar()** en las **propiedades** de la <instancia> propias del su <constructor> o <heredadas>, y luego no ira por **Persona.prototype** sino que irá por **Alumno.prototype** (en este caso no hay nada ahí), y si aún no encuentra nada irá pro el <prototipo-alfa> **Object** y nunca encontrara el <método-saludar>
+
+Antes se vio que una manera se ocupar un **objeto** como <prototipo> es empleando el <método> **Object.create()**
+
+recordatorio:
+
+```javascript
+var Persona = { // ojo que inicia con mayúscula para indicar que es una clase o prototipo
+    nombre : null,
+    edad : 'la que sea',
+} 
+
+var lucho = Object.create(Persona);
+// lucho ==== {}, pero lucho.nombre === null && lucho.edad === 'la que sea' 
+
+```
+Esto tampoco lo termino de entender, pero, en este caso, se crea un **objeto** vacío <lucho> que por medio de herencia puede acceder a las **propiedades** de su **prototipo** <Persona>
+
+en **Alumno.prototype** es <undefined> pero ocupando el **método** **Object.create** se podria hacer el enlace de manera heredada a **Persona.prototype**
+
+```javascript
+Alumno.prototype = Object.create(Persona.prototype)
+
+```
+***NOTA***
+
+antes de crear una <instancia> de **objeto** que tiene un <constructor> con **métodos-heredados**, es mejor asignar **.prototype** de lo contrarío (así me ha pasado) ha consultar posteriormente por cierto **método** heredado via **prototype** no se podrá acceder. `En otras palabras, antes de declarar un nuevo alumno, se tiene que hacer el enlace de <.prototype>`
 
 Como podemos ver los métodos de *Personas* no fueron pasados a nuestros *Alumnos*. Veamos un poco el porqué.
 
@@ -307,4 +355,4 @@ class Trabajador extends Persona {
         this.sueldo = sueldo;
     }
 }
-```
+```|
