@@ -10,6 +10,8 @@
 
 ## web del módulo 7 empata con 06-js-v
 * leer todo y ver videos
+hay una definición distinta de clase (entidad) y de prototipo
+tengo qye actualizar un poco los apuntes y hacer el homework
 ___
 
 ***para-después***
