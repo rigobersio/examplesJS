@@ -17,6 +17,35 @@ pseudo clásica usando la keyword **new**.
 * retomando: un constructor es una función, pero a la vez es un objeto (todo en JS es un objeto); ocupando **new**
 se puede hacer una instancia de esa **función constructora**, la cual por ser **función** puede tomar **argumentos**
 
+### Otra perspectiva también de Henry
+
+* ¿Qué es una clase?
+
+* Las <entidades> nacen como la representación de conceptos del mundo real.
+    Por ejemplo en una red social podemos encontrar las entidades de usuarios y publicaciones
+
+* Las **clases** son un conjunto de datos que pertenecen a una <entidad-general>. Las **clases** son una plantilla o un modelo que nos permite crear un **objeto** para representar distintas <entidades>.
+
+#### Ejemplo de clase:
+
+* En el mundo existen cientos de miles de animales que comparten características
+    La clase animal puede llevar los datos o propiedades: ojos, color, hábitat.
+    
+    Todos los animales compartirán estas propiedades, pero sus valores serán diferentes. Esta clase animal permite tener un concepto base para representar animales del mundo real, luego se puede crear o modelar con código toda clase de animales
+
+#### Existen 2 formas de declarar una clase:
+
+1. Sintaxis de función constructora
+2. Sintaxis expresión de clase
+
+#### Otro ejemplo: 
+
+* En el mundo real existe los autos, luego con una clase se puede crear la plantilla para modelar la entidad auto.
+
+#### Resumen ¿qué es una clase?
+
+* Las clases son una plantilla o un modelo que nos permite crear un objeto para representar distintas entidades
+
 ### creación del constructor  ***Gato***
 
 * Las ***f constructoras*** por convención inician con **mayúscula**.
@@ -156,7 +185,7 @@ var lucho = Object.create(Persona);
 
 ```
 
-### Object.assign // esto aun no lo veo
+### Object.assign
 
 El método `assign` de los objetos te permite agregar propiedades a un objeto pasado por parámetro
 
@@ -169,7 +198,7 @@ El método `assign` de los objetos te permite agregar propiedades a un objeto pa
 > obj.nombre
 < 'Emi' 
 ```
-
+// También es util para copiar indirectamente objetos o más bien todas sus propiedades. Las propiedades del segundo parámetro que puede ser una variable o un objeto literal, se copian dentro del primer parámetro que es otro objeto
 ___
 
 
@@ -216,6 +245,23 @@ Ahora todo Alumno de Henry antes de Alumno es una Persona, asique podríamos dec
     this.ciudad = ciudad;
     this.curso = curso
   }
+```
+
+## Otra Perspectiva también de Henry
+
+* El concepto **prototipo** está muy ligado a los métodos que poseen los objetos y las clases
+
+* Los **prototipos** son un <mecanismo> por el cual todos los **objetos** o elementos de JS pueden extender sus **propiedades-métodos**. El proceso en el que los **objetos-globales** (o padres) de JS le extienden **métodos-propiedades** a los datos se denomina **herencia**.
+
+* Ejemplo:
+    el objeto **global-Array** le extiende mediante su **prototipo** **métodos** a cualquier variable de tipo **array**
+
+Gracias a los prototipos se puede acceder al constructor de cualquier objeto. Respecto al ejemplo anterior, se puede agregar en el prototipo del objeto global Array un nuevo método que estará disponible para todos los arreglos
+
+* ejemplo de herencia global
+
+```javascript
+Array.prototype.metodoSaludar = function () {return console.log('Hola soy una arreglo y mi contenido es: ' + this)}
 ```
 
 ### Constructores Anidados
@@ -342,8 +388,13 @@ var lucho = new Persona ('Lucho', 'Zanahoria');
 
 ## Keyword extends más método <super>
 
-* Esto es un profundización de lo anterior. el método **super** permite heredar cosas de otro prototipo.
-* Es como anidar un prototipo ????
+* Las expresiones de clase pueden participar en composición de otras clases.
+* A partir de una clase general con ciertas propiedades o métodos, se puede construir otra clase que herede alguna de esas propiedades o métodos.
+* La keyword <extends> permite a la nueva **clase** <extenderse> a partir de una **clase-general**.
+* El   método <super> permite heredar las propiedades.
+* Mediante este tipo de <sintaxis> se puede acceden heredar directamente los **métodos** de la **clase-general**
+
+* `POR LO QUE ENTIENDO HASTA EL MOMENTO <extends> Y <super>  SE TIENEN QUE OCUPAR JUNTOS. INTENTE CREAR UNA CLASE QUE HEREDARA SOLO LOS MÉTODOS DE UNA CLASE GENERAL PERO NO GUARDARA RELACIÓN CON LAS PROPIEDADES Y SE PRODUJO UN ERROR (NO OCUPAR <super>. No es necesario que **super()** contenga todos los parámetros. También hay que considerar que los **métodos** de las **class-general** normalmente están relacionados a las mismas **propiedades** de esa **class-general**`
 
 * sintaxis:
 
