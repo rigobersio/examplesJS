@@ -17,12 +17,22 @@ En esta lección cubriremos:
 # tareas
 
 ## local 07-JS-VI
-* readme
-* vídeo
-* homework
+* readme ok
+* vídeo ok
+* homework ok
 
 ## web del módulo 8 empata con 07-js-VI
-* video
-* actualizar info
+* video OK
+* actualizar info OK
+
+## Otras tareas
+
+* plantas
+* Divina Liturgia
+* el Homework ----> O.K.
+* Challeng videos
+* HTML
+* CSS
+
 
 

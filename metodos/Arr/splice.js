@@ -34,11 +34,13 @@ Podemos usar splice para lograr esto:
 // Eliminamos 'naranjas' y 'uvas' (deleteCount = 2) a partir de la posición 2.
 listaCompras.splice(2, 2);
 
-// Insertamos 'peras' en la posición 2.
+// Insertamos 'peras' en la posición 2. ***OJO 'peras' quedara en la pocision 2***
 listaCompras.splice(2, 0, 'peras');
 
 // Agregamos 'sandías' y 'melones' al final de la lista.
-listaCompras.splice(listaCompras.length, 0, 'sandías', 'melones');
+listaCompras.splice(listaCompras.length, 0, 'sandías', 'melones'); 
+
+// [1,2,3,4] el index max de este arr es 3 si se quiere agregar el 5 sería [...].splice(4,0,5). ,length es muy cómodo para esto
 
 console.log(listaCompras);
 

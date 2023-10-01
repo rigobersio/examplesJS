@@ -43,7 +43,7 @@ function ordenarObjetos (arrObject) {
         }
         ++i;
     };
-    return arrSinProp4.concat(arrConProp4.sort((a, b) => a -b))
+    return arrSinProp4.concat(arrConProp4.sort((a, b) => a - b))
 }
 
 ordenarObjetos(arrObj);
