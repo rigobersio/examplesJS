@@ -139,7 +139,7 @@ this.tipo = tipo;
 }
 
 hablar(linea) {
-console.log(`El conejo ${this.tipo} dice '${linea}'`);
+console.log(`El conejo ${this.tipo} dice '${linea}'`); //ojo que normalmente se va a necesitar **return**
 }
 }
 

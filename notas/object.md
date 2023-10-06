@@ -112,7 +112,7 @@ La palabra clave `this` puede comenzar a volverse muy confusa cuando comenzamos 
 
 #### conexión entre <new> y <.prototype>
 
-* En los aparatados posteriores se entenderá mejor, pero, algo algo más que tiene que hacer **new** para que las **clases** y las **propiedades** ***heredadas*** funciones correctamente:
+* En los aparatados posteriores se entenderá mejor, pero, hay algo más que tiene que hacer **new** para que las **clases** y las **propiedades** ***heredadas*** funciones correctamente:
     1. crea obj ({})
     2. retorna NombreDeClase(parametro).bind(obj)
     3. el obj.__proto__ = retorno anterior // en JS nunca hay que tocar nada que tenga 2 guiones bajos

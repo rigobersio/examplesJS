@@ -1,4 +1,4 @@
-# El método hasOwnProperty() en JavaScript se utiliza para determinar si un objeto tiene una propiedad con un nombre específico. Aquí tienes algunos ejemplos clásicos de cómo usar este método:
+# El método hasOwnProperty() en JavaScript se utiliza para determinar si un objeto tiene una propiedad con un nombre específico. Ejemplos clásicos de cómo usar este método:
 
 Comprobar si un objeto tiene una propiedad:
 

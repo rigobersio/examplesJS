@@ -28,9 +28,9 @@ En esta lección cubriremos:
 ## Otras tareas
 
 * plantas
-* Divina Liturgia
+* Divina Liturgia ---> OK
 * el Homework ----> O.K.
-* Challeng videos
+* Challeng videos [1,2..]
 * HTML
 * CSS
 
