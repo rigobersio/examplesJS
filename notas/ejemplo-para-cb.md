@@ -28,7 +28,7 @@ var productos = [{
 * `function(p) {return p.price >= 50` es la declaración de un <función-anónima>
 * ojo que es una <cb> porque no está siendo invocada, es la definición literal de una función.
 * ojo que no ocupa <this>
-* <p> es el array <productos> ¿como sabe el método filtrar() que <p> es el array?
+* **p** es el array <productos> ¿como sabe el método filtrar() que **p** es el array?
 * La explicación es que esto tiene que ver obligatoriamente con <this> en la declaración de método <filtrar>
 
 * dentro del del método filtrar seguramente hay un bucle donde se invocará recurrentemente <cd()>
